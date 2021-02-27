@@ -1,0 +1,81 @@
+
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Admin</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="theme-color" content="#0d47a1">
+  <link rel="stylesheet" href="../lib/bootstrap4/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../lib/alert_sweet/sweetalert.min.css">
+  <link rel="stylesheet" href="../lib/font_awesome5/css/all.min.css">
+  <link rel="stylesheet" href="css.css">
+  <!-- ios support -->
+  <link rel="apple-touch-icon" href="icons/icon-96x96.png">
+  <link rel="apple-touch-startup-image" href="icons/icon-96x96.png">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar" content="#0d47a1">
+  <style>
+
+  </style>
+</head>
+
+<body class="text-center likit_bgpic">
+    <form class="mt-4 form-signin" method="post" action="sendto.php">
+    <div id="app" v-cloak>
+      <div class="text-center mb-4">
+        <img class="mb-2" src="" alt="" width="96" height="96">
+        <div style="font-size:1.15rem">
+          <div class="text-white kanit">
+            Admin
+          </div>
+        </div>
+      </div>
+      <div class="form-label-group">
+        <input required type="text" value="" name="inputUserName" id="inputUserName"
+          class="form-control" placeholder="Email address" required autofocus>
+        <label for="inputUserName">User Name</label>
+      </div>
+      <div class="form-label-group">
+        <input required type="password" value="" name="inputPassword" id="inputPassword"
+          class="form-control" placeholder="Password" required>
+        <label for="inputPassword">Password</label>
+      </div>
+      <div class="checkbox mb-3 d-flex justify-content-end">
+        <label class="text-white">
+          <input type="checkbox"  name="rememberMe" value="1"> จำ Password
+        </label>
+      </div>
+      <button class="btn btn-lg btn-success btn-block" type="submit">เข้าใช้ระบบ</button>
+    </div>
+  </form>
+</body>
+
+
+</html>
+<script src="../lib/vuejs/vue.min.js"></script>
+<script src="../lib/axios/axios.min.js"></script>
+<script src="../lib/jquery/jquery-3.4.1.min.js"></script>
+<script src="../lib/bootstrap4/js/bootstrap.bundle.min.js"></script>
+<script src="../lib/alert_sweet/sweetalert.min.js"></script>
+<script>
+var vm = new Vue({
+  el: '#app',
+  data: function() {
+    return {
+      notfound: "",
+    }
+  },
+  mounted: function() {
+    if (this.notfound == '1') {
+      swal({
+        title: "",
+        text: "ไม่สามารถเข้าใช้ระบบได้",
+        icon: "warning",
+        buttons: ["ตกลง"],
+      }).then((value) => {})
+    }
+  }
+});
+</script>
